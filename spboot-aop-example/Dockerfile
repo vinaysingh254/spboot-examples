@@ -10,7 +10,7 @@ VOLUME /tmp
 EXPOSE 9001
 
 # The application's jar file
-ARG JAR_FILE=target/*.jar
+ARG JAR_FILE=target/spboot-aop-example-1.0-SNAPSHOT.jar
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} spring-boot-aop.jar

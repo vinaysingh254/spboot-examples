@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  dkspringbootaop:
+    image: "vinaysingh913/spring-boot-aop:1.0-SNAPSHOT"
+    ports:
+      - 9001:9001
+    environment:
+      - DEBUG=1
+    networks:
+      - frontend
+
+networks:
+  frontend:
+  backend:
+volumes:
+  dbdata:
