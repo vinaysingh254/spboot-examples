@@ -8,7 +8,6 @@ services:
       - DEBUG=1
     networks:
       - frontend
-
 networks:
   frontend:
   backend:

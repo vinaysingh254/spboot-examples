@@ -13,4 +13,11 @@ node {
         }
         bat 'docker push vinaysingh913/spring-boot-aop:1.0-SNAPSHOT'
     }
+    stage('Run Container on Local Server'){
+      bat 'docker-compose -f docker-compose.yml up -d dkspringbootaop'
+    }
+    sshagent(['remoteDockerserver']) {
+    def dockerRun='docker-compose -f docker-compose.yml up -d dkspringbootaop'
+        sh "ssh -o StrictHostKeyChecking=no vsingh@127.0.0.1 ${dockerRun}"
+    }
 }
